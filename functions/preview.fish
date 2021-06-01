@@ -15,7 +15,7 @@ function preview -d "Preview file content"
 
         if functions -q _preview_ext_$extname
             _preview_ext_$extname $arg
-            break
+            continue
         end
 
         set -l mime (file -b --mime-type $arg)
@@ -24,10 +24,10 @@ function preview -d "Preview file content"
 
         if functions -q _preview_mime_$mime_base
             _preview_mime_$mime_base $arg
-            break
+            continue
         else if functions -q _preview_mime_$mime_name
             _preview_mime_$mime_name $arg
-            break
+            continue
         end
 
         file -b $arg
