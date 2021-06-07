@@ -1,12 +1,12 @@
 function preview -d "Preview file content"
-    set -lx BAT_ARGS --style numbers --color always
     test (count $argv) != 1 && set -l multi
+    set -l newline
 
     for arg in $argv
-        if set -q newline
+        if test "$newline" = 1
             echo
         else
-            set -l newline
+            set newline 1
         end
 
         set -q multi && echo (set_color -o)$arg(set_color normal)

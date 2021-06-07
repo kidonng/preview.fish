@@ -1,7 +1,1 @@
-command -sq glow || exit
-
-function _preview_ext_md
-    set -q theme && set -p argv -s $theme
-
-    glow $argv
-end
+_preview_viewer_glow.fish
