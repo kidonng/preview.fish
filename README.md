@@ -16,6 +16,16 @@
   fisher install kidonng/preview.fish
   ```
 
+## Dependencies
+
+Only [`file(1)`](https://darwinsys.com/file/) is mandatory required, the following programs provides previews for more file types:
+
+- [`bat`](https://github.com/sharkdp/bat) for texts
+- [`glow`](https://github.com/charmbracelet/glow) for `*.md` (Markdown)
+- [`p7zip`](https://github.com/jinfeihan57/p7zip) for archives
+- [`timg`](https://github.com/hzeller/timg) for images and videos
+- macOS builtin tools `plutil` and `qlmanage` for documents and some other stuff
+
 ## Usage
 
 The main function is `preview`:
