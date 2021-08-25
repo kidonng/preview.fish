@@ -18,7 +18,7 @@
 
 ## Dependencies
 
-Only [`file(1)`](https://darwinsys.com/file/) is a mandatory dependency. The following programs are optional and provides previews for more file types:
+Only [`file(1)`](https://darwinsys.com/file/) is a mandatory dependency. The following programs are optional and provide previews for more file types:
 
 - [`bat`](https://github.com/sharkdp/bat) for texts
 - [`glow`](https://github.com/charmbracelet/glow) for `*.md` (Markdown)
@@ -33,7 +33,7 @@ The main function is `preview`:
 ```
 $ preview shell.sh
    1 echo Hello world!
-   2 echo This is shell file example
+   2 echo This is an example of a file
 ```
 
 An awesome use case is to combine the plugin with [fzf.fish](https://github.com/PatrickF1/fzf.fish):
@@ -42,7 +42,7 @@ An awesome use case is to combine the plugin with [fzf.fish](https://github.com/
 set -U fzf_preview_file_cmd preview
 ```
 
-P.S. if you don't have the plugin, definitely check it out, it is one of the must-have Fish plugins and also I am one of its main contributors.
+P.S. if you don't have the plugin, definitely check it out. It is a must-have Fish plugins and also, I am one of its main contributors.
 
 ---
 
