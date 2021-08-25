@@ -18,7 +18,7 @@
 
 ## Dependencies
 
-Only [`file(1)`](https://darwinsys.com/file/) is mandatory required, the following programs provides previews for more file types:
+Only [`file(1)`](https://darwinsys.com/file/) is a mandatory dependency. The following programs are optional and provides previews for more file types:
 
 - [`bat`](https://github.com/sharkdp/bat) for texts
 - [`glow`](https://github.com/charmbracelet/glow) for `*.md` (Markdown)
@@ -42,13 +42,13 @@ An awesome use case is to combine the plugin with [fzf.fish](https://github.com/
 set -U fzf_preview_file_cmd preview
 ```
 
-P.S. if you don't have the plugin, definitely check it out, it is one of the must-have Fish plugins and also contributed by me.
+P.S. if you don't have the plugin, definitely check it out, it is one of the must-have Fish plugins and also I am one of its main contributors.
 
 ---
 
 Previews are generated via **viewers**, which is a function named `_preview_viewer_<program name>`. The above example is using `_preview_viewer_bat`.
 
-To decide which viewer to use, the plugin check for a corresponding function, in the following order:
+To decide which viewer to use, the plugin check for a corresponding function in the following order:
 
 1. `_preview_ext_<extension>` for matching file extensions.
 
@@ -87,7 +87,7 @@ function _preview_viewer_bat
 end
 ```
 
-Or adding support for a file extension:
+And this is how to add support for a file extension:
 
 ```fish
 # Preview `*.dll` files with `7z`
