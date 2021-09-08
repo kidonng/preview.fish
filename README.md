@@ -1,4 +1,4 @@
-# 🔍🐟 preview.fish
+# 🔍🐟 Preview.fish
 
 [Fish](https://fishshell.com/) plugin for previewing files.
 
