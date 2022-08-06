@@ -1,7 +1,7 @@
 command -sq bat || exit
 
-set -l cmd (string replace .fish "" (status basename))
+set -l cmd (path change-extension "" (status basename))
 
 function $cmd
-    bat --style numbers --color always $argv
+    bat --style auto --color always $argv
 end

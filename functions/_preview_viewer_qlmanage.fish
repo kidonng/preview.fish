@@ -1,8 +1,8 @@
-if ! command -sq qlmanage || ! functions -q _preview_viewer_timg
+if test (uname) != Darwin || ! functions -q _preview_viewer_timg
     exit
 end
 
-set -l cmd (string replace .fish "" (status basename))
+set -l cmd (path change-extension "" (status basename))
 
 function $cmd
     set -l tmp (mktemp -d)

@@ -1,7 +1,5 @@
-command -sq 7z || exit
-
 set -l cmd (path change-extension "" (status basename))
 
 function $cmd
-    7z l $argv | tail -n +12
+	unzip -l $argv
 end

@@ -1,1 +1,1 @@
-_preview_viewer_7z.fish
+_preview_viewer_tar.fish

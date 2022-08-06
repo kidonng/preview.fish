@@ -1,6 +1,6 @@
-command -sq plutil || exit
+test (uname) = Darwin || exit
 
-set -l cmd (string replace .fish "" (status basename))
+set -l cmd (path change-extension "" (status basename))
 
 function $cmd
     plutil -p $argv
