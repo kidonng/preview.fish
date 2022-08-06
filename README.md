@@ -42,9 +42,9 @@ An awesome use case is to combine the plugin with [fzf.fish](https://github.com/
 set -U fzf_preview_file_cmd preview
 ```
 
-P.S. if you don't have the plugin, definitely check it out, it is one of the must-have Fish plugins and also contributed by me.
+> If you don't have fzf.fish, definitely check it out, it is one of the must-have Fish plugins and contributed by me.
 
----
+## Viewers
 
 Previews are generated via **viewers**, which is a function named `_preview_viewer_<program name>`. The above example is using `_preview_viewer_bat`.
 
