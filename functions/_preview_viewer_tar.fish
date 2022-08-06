@@ -1,5 +1,5 @@
 set -l cmd (path change-extension "" (status basename))
 
 function $cmd
-	tar -tf $argv
+    tar -tf $argv
 end
