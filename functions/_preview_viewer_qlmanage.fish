@@ -2,7 +2,7 @@ if test (uname) != Darwin || ! functions -q _preview_viewer_timg
     exit
 end
 
-set -l cmd (path change-extension "" (status basename))
+set -l cmd (status basename | path change-extension "")
 
 function $cmd
     set -l tmp (mktemp -d)

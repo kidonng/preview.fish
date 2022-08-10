@@ -1,6 +1,6 @@
 command -sq 7z || exit
 
-set -l cmd (path change-extension "" (status basename))
+set -l cmd (status basename | path change-extension "")
 
 function $cmd
     # Strip header

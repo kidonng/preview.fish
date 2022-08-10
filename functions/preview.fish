@@ -9,7 +9,7 @@ function preview -d "Preview file content"
         end | string replace $HOME "~"
         set_color normal
 
-        set -l extname (string replace . "" (path extension $arg))
+        set -l extname (path extension $arg | string replace . "")
 
         if functions -q _preview_ext_$extname
             _preview_ext_$extname $arg
@@ -17,7 +17,7 @@ function preview -d "Preview file content"
         end
 
         set -l type (file -b $arg)
-        set -l type_name (string replace -a " " _ (string split -f 1 -- , $type))
+        set -l type_name (string split -f 1 -- , $type | string replace -a " " _)
         set -l mime (file -b --mime-type $arg)
         set -l mime_base (string split -f 1 / $mime[1])
         set -l mime_name (string replace / _ $mime[1])
