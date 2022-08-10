@@ -1,5 +1,6 @@
 set -l cmd (path change-extension "" (status basename))
 
 function $cmd
-    unzip -l $argv
+    # Strip archive filename
+    unzip -l $argv | tail -n +2
 end
