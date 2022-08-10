@@ -17,7 +17,7 @@ function preview -d "Preview file content"
         end
 
         set -l type (file -b $arg)
-        set -l type_name (string replace -a -- " " _ $type)
+        set -l type_name (string replace -a " " _ (string split -f 1 -- , $type))
         set -l mime (file -b --mime-type $arg)
         set -l mime_base (string split -f 1 / $mime[1])
         set -l mime_name (string replace / _ $mime[1])
