@@ -1,1 +1,0 @@
-_preview_viewer_qlmanage.fish
