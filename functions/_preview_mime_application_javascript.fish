@@ -1,5 +1,5 @@
-functions -q _preview_viewer_bat || exit
+functions --query _preview_viewer_bat || exit
 
 function _preview_mime_application_javascript
-    _preview_viewer_bat -l js $argv
+    _preview_viewer_bat --language js $argv
 end

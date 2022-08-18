@@ -1,5 +1,5 @@
-functions -q _preview_viewer_bat || exit
+functions --query _preview_viewer_bat || exit
 
 function _preview_mime_application_json
-    _preview_viewer_bat -l json $argv
+    _preview_viewer_bat --language json $argv
 end

@@ -1,9 +1,9 @@
-command -sq glow || exit
+command --query glow || exit
 
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
-    test -n "$theme" && set -p argv -s $theme
+    test -n "$theme" && set --prepend argv --style $theme
 
     glow $argv
 end

@@ -1,32 +1,32 @@
-function preview -d "Preview file content"
+function preview --description "Preview file content"
     for arg in $argv
-        set_color -o
+        set_color --bold
         # Show filename with LS_COLORS
-        if command -sq exa
+        if command --query exa
             exa --color always $arg
         else
             ls $arg
         end | string replace $HOME "~"
         set_color normal
 
-        set -l extname (path extension $arg | string replace . "")
+        set --local extname (path extension $arg | string replace . "")
 
-        if functions -q _preview_ext_$extname
+        if functions --query _preview_ext_$extname
             _preview_ext_$extname $arg
             continue
         end
 
-        set -l type (file -b $arg)
-        set -l type_name (string split -f 1 -- , $type | string replace -a " " _)
-        set -l mime (file -b --mime-type $arg)
-        set -l mime_base (string split -f 1 / $mime[1])
-        set -l mime_name (string replace / _ $mime[1])
+        set --local type (file --brief $arg)
+        set --local type_name (string split --fields 1 -- , $type | string replace --all " " _)
+        set --local mime (file --brief --mime-type $arg)
+        set --local mime_base (string split --fields 1 / $mime[1])
+        set --local mime_name (string replace / _ $mime[1])
 
-        if functions -q _preview_type_$type_name
+        if functions --query _preview_type_$type_name
             _preview_type_$type_name $arg
-        else if functions -q _preview_mime_$mime_name
+        else if functions --query _preview_mime_$mime_name
             _preview_mime_$mime_name $arg
-        else if functions -q _preview_mime_$mime_base
+        else if functions --query _preview_mime_$mime_base
             _preview_mime_$mime_base $arg
         else
             echo $type

@@ -1,5 +1,5 @@
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
-    gzip -l $argv
+    gzip --list $argv
 end

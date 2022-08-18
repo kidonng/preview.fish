@@ -1,5 +1,5 @@
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
-    tar -tf $argv
+    tar --list -f $argv
 end

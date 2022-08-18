@@ -1,11 +1,11 @@
-if test (uname) != Darwin || ! functions -q _preview_viewer_timg
+if test (uname) != Darwin || ! functions --query _preview_viewer_timg
     exit
 end
 
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
-    set -l tmp (mktemp -d)
+    set --local tmp (mktemp -d)
 
     qlmanage -t -s (math $COLUMNS x 8) -o $tmp $argv &>/dev/null
     _preview_viewer_timg $tmp/*

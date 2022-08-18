@@ -1,6 +1,6 @@
-command -sq delta || exit
+command --query delta || exit
 
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
     delta <$argv

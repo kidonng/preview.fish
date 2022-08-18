@@ -58,7 +58,7 @@ To decide which viewer to use, the plugin check for a corresponding function, in
 
    E.g. `_preview_type_Apple_binary_property_list` matches `Apple binary property list`.
 
-3. `_preview_mime_<mime>` for matching `file -b --mime-type` (MIME) outputs, replacing all slashes (`/`) with underscore (`_`).
+3. `_preview_mime_<mime>` for matching `file --brief --mime-type` (MIME) outputs, replacing all slashes (`/`) with underscore (`_`).
 
    E.g. `_preview_mime_application_json` matches `application/json`.
    You can also only specify the part before the slash to match a general category, e.g. `_preview_mime_text` matches `text/*`.
@@ -67,7 +67,7 @@ View the source code for available viewers and matching functions.
 
 ---
 
-If no viewer is available for the previewed file, the output of `file -b` (file type description) and `file -b --mime-type` (MIME) will be displayed instead:
+If no viewer is available for the previewed file, the output of `file -b` (file type description) and `file --brief --mime-type` (MIME) will be displayed instead:
 
 ```
 $ preview /bin/bash

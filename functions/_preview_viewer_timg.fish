@@ -1,6 +1,6 @@
-command -sq timg || exit
+command --query timg || exit
 
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
     timg -g (math $COLUMNS - 2)x$LINES --frames 1 $argv

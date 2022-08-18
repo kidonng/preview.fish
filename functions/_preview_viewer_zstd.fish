@@ -1,7 +1,7 @@
-command -sq zstd || exit
+command --query zstd || exit
 
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
-    zstd -l $argv
+    zstd --list $argv
 end

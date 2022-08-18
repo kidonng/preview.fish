@@ -1,5 +1,5 @@
-set -l cmd (status basename | path change-extension "")
+set --local cmd (status basename | path change-extension "")
 
 function $cmd
-    xz -l $argv
+    xz --list $argv
 end
