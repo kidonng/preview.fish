@@ -6,7 +6,7 @@ function preview --description "Preview file content"
             exa --color always $arg
         else
             ls $arg
-        end | string replace $HOME "~"
+        end | string replace --regex "^$HOME" "~"
         set_color normal
 
         set --local extname (path extension $arg | string replace . "")
