@@ -1,12 +1,7 @@
 function preview --description "Preview file content"
     for arg in $argv
         set_color --bold
-        # Show filename with LS_COLORS
-        if command --query exa
-            exa --color always $arg
-        else
-            ls $arg
-        end | string replace --regex "^$HOME" "~"
+        string replace --regex "^$HOME" "~" -- $arg
         set_color normal
 
         set --local extname (path extension $arg | string replace . "")
